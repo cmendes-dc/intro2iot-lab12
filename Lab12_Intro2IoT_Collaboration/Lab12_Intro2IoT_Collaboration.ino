@@ -34,12 +34,12 @@ void loop() {
 // ===============================
 // Light Detection – Student 1
 bool isRoomDark() {
-  int lightLevel = analogRead(lightSensorPin);
-  Serial.print("Light Level: ");
-  Serial.println(lightLevel);
+  int lightlevel= analogRead(A0);
+  Serial.print("Lightlevel: ");
+  Serial.println(lightlevel);
 
   // TODO: Fix this logic so it returns true when it's dark
-  return false; // <-- incorrect for now
+  return true; // <-- incorrect for now
 }
 
 // ===============================
