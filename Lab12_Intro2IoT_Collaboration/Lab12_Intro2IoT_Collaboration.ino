@@ -21,11 +21,11 @@ void loop() {
 
   // Control the LED
   if (isDark || isButtonOn) {
-    digitalWrite(ledPin, HIGH);
-    Serial.println("LED: ON");
-  } else {
     digitalWrite(ledPin, LOW);
     Serial.println("LED: OFF");
+  } else {
+    digitalWrite(ledPin, HIGH);
+    Serial.println("LED: ON");
   }
 
   delay(200); // basic debounce + sampling interval
@@ -52,11 +52,13 @@ bool isButtonActivated() {
   // TODO: Fix this logic and print the correct status
   // Button is normally HIGH
   if (state == HIGH) {
+     Serial.println("LED: OFF");
     // Button not pressed
-    return true;
-  } else {
-    // Button pressed
     return false;
+  } else {
+      Serial.println("LED: ON");
+    // Button pressed
+    return true;
   }
 
   // HINT: Serial.print should say "ON" or "OFF" too
