@@ -8,6 +8,7 @@ const int darkThreshold = 500;   // Adjust based on ambient light conditions
 
 bool isDark = false;
 bool isButtonOn = false;
+bool state;
 
 void setup() {
   Serial.begin(9600);
@@ -45,13 +46,13 @@ bool isRoomDark() {
 // ===============================
 // Manual Switch Control – Student 2
 bool isButtonActivated() {
-  bool state = digitalRead(buttonPin);
+  state = digitalRead(buttonPin);
   
   Serial.print("isButtonOn: ");
-}
+
   // TODO: Fix this logic and print the correct status
   // Button is normally HIGH
-  if (state = HIGH) {
+  if (state == HIGH) {
     // Button not pressed
     return true;
   } else {
