@@ -33,13 +33,19 @@ void loop() {
 
 // ===============================
 // Light Detection – Student 1
-bool isRoomDark() {
-  int lightLevel = analogRead(lightSensorPin);
+bool isRoomDark() 
+{
+  float lightLevel = analogRead(lightSensorPin);
   Serial.print("Light Level: ");
   Serial.println(lightLevel);
 
   // TODO: Fix this logic so it returns true when it's dark
-  return false; // <-- incorrect for now
+  if (lightLevel < darkThreshold) {
+    return true ; }
+
+  else {
+    return false;}
+
 }
 
 // ===============================
